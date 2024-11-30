@@ -1,38 +1,75 @@
-.App {
-  text-align: center;
+/* Ensure the page fills the entire viewport height */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPDJKa2bZtTe0MQdpO3yRbuuF1hM1JcNUbIw&s');
+  background-size: cover;  /* Ensures the image covers the entire screen */
+  background-position: center;  /* Centers the image */
+  background-attachment: fixed;  /* Keeps the background fixed while scrolling */
+  color: white;  /* Set text color to white for better contrast against the image */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Optional: Enhance readability of text */
+h2, h3, p {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);  /* Adds some shadow to text for better readability */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Ensures the content occupies the full page and footer stays at the bottom */
+.app-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  min-height: 100vh;  /* Ensure the page height fills the screen */
+}
+
+/* Main content should take up the available space */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  text-align: center; /* Center align the content */
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #222; /* Dark background */
+  color: #ddd; /* Light text color for contrast */
+  text-align: center;
+  padding: 30px 20px;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer p {
+  font-size: 0.9rem;
+  margin: 10px 0;
+  color: #bbb;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 20px;
+  margin: 20px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.footer-links li {
+  display: inline-block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer-links a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  color: #0056b3;
 }

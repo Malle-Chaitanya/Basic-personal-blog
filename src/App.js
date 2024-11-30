@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';  // Import Routes and Route components
+import Navbar from './components/Navbar';  // Import Navbar
+import Homepage from './components/Homepage';  // Import Homepage component
+import PostForm from './components/PostForm';  // Import Create Post form component
+import Footer from './components/Footer'; 
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Homepage />} />  {/* Define route for homepage */}
+        
+        <Route path="/create" element={<PostForm />} />  {/* Define route for create post */}
+        <Route path="/update/:id" element={<PostForm />} /> {/* Update post */}
+      </Routes>
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
+
+

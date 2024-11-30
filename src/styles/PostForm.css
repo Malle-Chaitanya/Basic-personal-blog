@@ -1,0 +1,78 @@
+/* Style the form */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 40px 20px;  /* Increased top and bottom padding */
+    background-color: rgba(255, 255, 255, 0.8);  /* Slightly transparent background to improve visibility over the image */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6wK88O0JCt5I_mV4rZq2Pv9Du5lRIFmf2_w&s');  /* Set your desired background image */
+    background-size: cover;  /* Ensures the image covers the entire form */
+    background-position: center;  /* Centers the background image */
+    background-repeat: no-repeat;  /* Prevents the image from repeating */
+    min-height: 500px;  /* Ensure the form has a minimum height */
+    position: relative;  /* Allows layering of content */
+  }
+  
+  /* Overlay for the background image */
+  form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);  /* Darkens the background image */
+    border-radius: 8px;  /* Matches the form's rounded corners */
+    z-index: -1;  /* Places the overlay behind the form content */
+  }
+  
+  /* Heading for the form */
+  form h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+  }
+  
+  /* Title input and textarea styling */
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 12px;  /* Increased padding for better spacing */
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  
+  /* Make the content textarea larger */
+  textarea {
+    height: 200px;
+    resize: vertical;
+  }
+  
+  /* Button styling in form */
+  form button {
+    background-color: #1e90ff;  /* Sky blue */
+    color: white;
+    padding: 12px 20px; /* Increased padding */
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px; /* More space between button and input fields */
+    transition: background-color 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #4682b4;  /* Darker blue on hover */
+  }
+  
+  form button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  

@@ -1,0 +1,77 @@
+/* Post Container Styling */
+.posts-container {
+    display: flex;
+    flex-wrap: wrap;  /* Allow wrapping of posts on smaller screens */
+    justify-content: space-between; /* Space out the posts evenly */
+    gap: 20px; /* Space between posts */
+    margin: 20px;
+  }
+  
+  /* Individual Post Styling */
+  .post {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 45%; /* Each post takes up 45% of the container's width */
+    box-sizing: border-box;
+  }
+  
+  /* Hover Effect on Post */
+  .post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Post Title and Content */
+  .post h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #007bff;
+  }
+  
+  .post p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  /* Buttons Styling for posts */
+  .post button {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 10px; /* Adding space above buttons */
+  }
+  
+  /* Delete Button Styling */
+  .post .delete-button {
+    background-color: #e74c3c;  /* Red background */
+    color: #fff;
+    margin-right: 10px;
+    box-shadow: 0 3px 6px rgba(231, 76, 60, 0.4);  /* Soft red shadow */
+  }
+  
+  .post .delete-button:hover {
+    background-color: #c0392b;  /* Darker red on hover */
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.6);  /* Stronger shadow on hover */
+  }
+  
+  /* Edit Button Styling */
+  .post .edit-button {
+    background-color: #2ecc71;  /* Green background */
+    color: #fff;
+    box-shadow: 0 3px 6px rgba(46, 204, 113, 0.4);  /* Soft green shadow */
+  }
+  
+  .post .edit-button:hover {
+    background-color: #27ae60;  /* Darker green on hover */
+    box-shadow: 0 4px 8px rgba(46, 204, 113, 0.6);  /* Stronger shadow on hover */
+  }
+  
