@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getPosts, deletePost } from "../services/api";
 import Post from "./Post";
 import '../styles/Homepage.css';
-
+//
 const Homepage = () => {
   const [posts, setPosts] = useState([]);  // Initialize posts as an empty array
 

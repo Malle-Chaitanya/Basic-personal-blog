@@ -78,14 +78,14 @@
 /* App.css or global CSS file */
 body {
     background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPDJKa2bZtTe0MQdpO3yRbuuF1hM1JcNUbIw&s');
-    background-size: cover;  /* Ensures the image covers the entire screen */
-    background-position: center;  /* Centers the image */
-    background-attachment: fixed;  /* Keeps the background fixed while scrolling */
-    height: 100vh;  /* Ensures the body takes up the full height of the viewport */
-    margin: 0;  /* Removes default margin */
-    color: white;  /* Set text color to white for better contrast against the image */
+    background-size: cover;  
+    background-position: center; 
+    background-attachment: fixed;  
+    height: 100vh;  
+    margin: 0;  
+    color: white;  
   }
   
-  /* Optional: Enhance readability of text */
+
   
     

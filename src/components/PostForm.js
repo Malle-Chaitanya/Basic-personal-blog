@@ -4,62 +4,61 @@ import { useParams, useNavigate } from "react-router-dom";  // useNavigate for r
 import '../styles/PostForm.css';
 
 const PostForm = () => {
-  const { id } = useParams();  // Get the post ID from the URL parameters
-  const navigate = useNavigate();  // Initialize navigate for redirection
-  const [post, setPost] = useState({ title: "", content: "" });  // Initialize state for the post data
-  const [isEdit, setIsEdit] = useState(false);  // Flag to check if we are in "edit" mode
-  const [loading, setLoading] = useState(false);  // Loading state to show while fetching/updating
+  const { id } = useParams();  
+  const navigate = useNavigate(); 
+  const [post, setPost] = useState({ title: "", content: "" });  
+  const [isEdit, setIsEdit] = useState(false);  
+  const [loading, setLoading] = useState(false);  
 
-  // Memoize the fetchPost function to avoid unnecessary re-renders
+  
   const fetchPost = useCallback(async () => {
-    setLoading(true);  // Start loading while fetching
+    setLoading(true);  
     try {
-      const response = await getPostById(id);  // Fetch the post data by ID
-      setPost(response || { title: "", content: "" });  // Populate state with fetched data
-      setIsEdit(true);  // Set to "edit" mode after fetching data
+      const response = await getPostById(id); 
+      setPost(response || { title: "", content: "" });  
+      setIsEdit(true); 
     } catch (error) {
       console.error("Error fetching post:", error);
       alert("Failed to fetch post.");
     } finally {
       setLoading(false);  // End loading
     }
-  }, [id]);  // Dependency on id so it fetches whenever the ID changes
+  }, [id]);  
 
-  // Fetch the post data for editing when the component mounts or when the ID changes
+  
   useEffect(() => {
     if (id) {
-      fetchPost();  // Call fetchPost to retrieve the data
+      fetchPost();  
     }
-  }, [id, fetchPost]);  // Dependencies: id and fetchPost
+  }, [id, fetchPost]);  
 
-  // Handle form submission (both create and update)
   const handleSubmit = async (e) => {
-    e.preventDefault();  // Prevent default form submission
+    e.preventDefault();  
     if (!post.title || !post.content) {
       alert("Both title and content are required.");
       return;
     }
 
-    setLoading(true);  // Start loading during submission
+    setLoading(true);
     try {
       if (isEdit) {
-        await updatePost(id, post);  // Call the API to update the post
+        await updatePost(id, post);  
         alert("Post updated successfully");
       } else {
-        await createPost(post);  // Call the API to create the post
+        await createPost(post);  
         alert("Post created successfully");
       }
-      setPost({ title: "", content: "" });  // Reset the form after submission
-      navigate("/");  // Redirect to the homepage or posts list
+      setPost({ title: "", content: "" }); 
+      navigate("/");  
     } catch (error) {
       console.error("Error submitting post:", error);
       alert("Failed to submit post.");
     } finally {
-      setLoading(false);  // End loading
+      setLoading(false);  
     }
   };
 
-  // If loading, display a loading message
+ 
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -70,14 +69,14 @@ const PostForm = () => {
       <input
         type="text"
         placeholder="Title"
-        value={post?.title || ""}  // Use existing title or an empty string
-        onChange={(e) => setPost({ ...post, title: e.target.value })}  // Update title in state
+        value={post?.title || ""}  
+        onChange={(e) => setPost({ ...post, title: e.target.value })} 
         required
       />
       <textarea
         placeholder="Content"
-        value={post?.content || ""}  // Use existing content or an empty string
-        onChange={(e) => setPost({ ...post, content: e.target.value })}  // Update content in state
+        value={post?.content || ""}  
+        onChange={(e) => setPost({ ...post, content: e.target.value })}  
         required
       ></textarea>
       <button type="submit" disabled={loading}>

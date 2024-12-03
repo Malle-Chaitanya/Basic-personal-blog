@@ -71,7 +71,7 @@
   }
   
   .post .edit-button:hover {
-    background-color: #27ae60;  /* Darker green on hover */
-    box-shadow: 0 4px 8px rgba(46, 204, 113, 0.6);  /* Stronger shadow on hover */
+    background-color: #27ae60; 
+    box-shadow: 0 4px 8px rgba(46, 204, 113, 0.6);  
   }
   
