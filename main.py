@@ -16,16 +16,17 @@ app.add_middleware(
 )
 
 # MySQL connection configuration
+
 db_config = {
-    "host": "localhost",
-    "user": "root",
-    "password": "root",
-    "database": "blog_db"
+    "host": os.getenv("DB_HOST", "localhost"),
+    "user": os.getenv("DB_USER", "root"),
+    "password": os.getenv("DB_PASSWORD", "root"),
+    "database": os.getenv("DB_NAME", "blog_db"),
 }
 
 # Create database and table if not exist
 def init_db():
-    conn = mysql.connector.connect(host="localhost", user="root", password="root")
+    conn = mysql.connector.connect(host="DB_HOST", user="DB_USER", password="DB_PASSWORD")
     cursor = conn.cursor()
     cursor.execute("CREATE DATABASE IF NOT EXISTS blog_db")
     conn.close()
